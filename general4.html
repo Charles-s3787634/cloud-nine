@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <link href="./style.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- custom font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <!-- end custom font -->
+
+    <title>New call of duty is sick</title>
+
+    <!-- styles -->
+    <style>
+      body {
+        font-family: "Comic Neue", cursive;
+        margin: 2em;
+        background-color: #f0e1ac;
+        color: #f46df5;
+        font-size: 1.2em;
+      }
+      h1 {
+        color: #f59835;
+        margin-bottom: 0;
+      }
+      h2 {
+        color: #e02c29;
+        font-size: 0.9em;
+        margin-top: 0;
+      }
+      #poem > div {
+        height: 1.2em;
+      }
+      .indent {
+        padding-left: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>new call of duty is sick</h1>
+    <h2>GamingGecko</h2>
+    <div id="poem"></div>
+    <script>
+      // set up the lists of words
+      const FirstChunk = "new cod game is SO GOOD.,new cod game is SICK-TARDED.,new cod game is BALLS TO THE WALL EPIC.".split(","),
+        SecondChunk = "the BOOB JIGGLE is so realistic,the GUNS are so realistic.,the BLOOD SPLATTER is so realistic.".split(","),
+        ThirdChunk = "i love shooting the WOMEN in this game.,i love shooting the MINORITIES in this game.,i love shooting the ANIMALS in this game.".split(","),
+        FourthChunk = "BANG! BANG! haha,SERVES YOU RIGHT BITCH!!! haha,OPEN FIRE ON CIVILIANS! haha" .split(",")
+      // set up the counter
+      let counter = 0;
+
+      // a function to pull a random item from a list
+      function getRandomFromList(list) {
+        return list[Math.floor(Math.random() * list.length)];
+      }
+      // add a line to the poem constructed from the lists of words
+      function addLine(indent = false) {
+        // create the line
+        const line = document.createElement("div");
+        if (indent === true) {
+          // indent is true so add an indent class
+          line.classList.add("indent");
+        }
+        const text =
+          getRandomFromList(FirstChunk) +
+          " " +
+          getRandomFromList(SecondChunk) +
+          " " +
+          getRandomFromList(ThirdChunk) +
+          " " +
+          getRandomFromList(FourthChunk);
+        const lineText = document.createTextNode(text);
+        line.appendChild(lineText);
+        // get the poem
+        const poem = document.getElementById("poem");
+        poem.appendChild(line);
+      }
+      // implement the rules of the poem
+      /*function processPoem() {
+        counter++;
+        if (counter % 5 === 0) {
+    
+        } else if (counter % 5 === 2 || counter % 5 === 4) {
+          
+          // if the second or fourth line add the line with an indent
+          addLine(false);
+        } else {
+          addLine();
+        }
+        if (counter > 15) {
+          removeFirstLine();
+        }
+      }
+      window.setInterval(processPoem, 1000);*/
+      addLine(false);
+    </script>  
+  </body>
+      <button onclick="window.location.href='general.html';"
+          class="favorite styled"
+        type="button">
+    BACK TO GENERAL
+</button>
+<button onclick="window.location.href='general4.html';"
+          class="favorite styled"
+        type="button">
+    REFRESH
+</button>
+<button onclick="window.location.href='index.html';"
+          class="favorite styled"
+        type="button">
+    BACK TO HOME
+  </button>
+</html>
